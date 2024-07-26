@@ -9,64 +9,64 @@
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
 
   <script>
-    const hanaShowInfo = () => {
+    const sakuraShowInfo = () => {
       let y = 0;
-      const hanaCountryButton0 = document.querySelector("#hana-country-button0");
-      const hanaCountryButton1 = document.querySelector("#hana-country-button1");
-      const hanaCountryButton2 = document.querySelector("#hana-country-button2");
-      const hanaCountryButton3 = document.querySelector("#hana-country-button3");
-      const hanaText = document.querySelector("#hana-text");
+      const sakuraCountryButton0 = document.querySelector("#sakura-country-button0");
+      const sakuraCountryButton1 = document.querySelector("#sakura-country-button1");
+      const sakuraCountryButton2 = document.querySelector("#sakura-country-button2");
+      const sakuraCountryButton3 = document.querySelector("#sakura-country-button3");
+      const sakuraText = document.querySelector("#sakura-text");
 
-      hanaCountryButton0.setAttribute("visible", true);
+      sakuraCountryButton0.setAttribute("visible", true);
       setTimeout(() => {
-        hanaCountryButton1.setAttribute("visible", true);
+        sakuraCountryButton1.setAttribute("visible", true);
       }, 300);
       setTimeout(() => {
-        hanaCountryButton2.setAttribute("visible", true);
+        sakuraCountryButton2.setAttribute("visible", true);
       }, 600);
       setTimeout(() => {
-        hanaCountryButton3.setAttribute("visible", true);
+        sakuraCountryButton3.setAttribute("visible", true);
       }, 900);
       setTimeout(() => {
-        hanaText.setAttribute("visible", true);
+        sakuraText.setAttribute("visible", true);
       }, 1200);
 
       let currentTab = '';
-      hanaCountryButton0.addEventListener('click', function(evt) {
-        hanaText.setAttribute("value", "Go to Japan Wiki");
+      sakuraCountryButton0.addEventListener('click', function(evt) {
+        sakuraText.setAttribute("value", "Go to Japan Wiki");
         currentTab = 'country0';
         if (currentTab === 'country0') {
-          window.location.href = "https://ja.wikipedia.org/wiki/%E8%8A%B1";
+          window.location.href = "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%82%AF%E3%83%A9";
         }
       });
-      hanaCountryButton1.addEventListener('click', function(evt) {
-        hanaText.setAttribute("value", "Go to China wiki");
+      sakuraCountryButton1.addEventListener('click', function(evt) {
+        sakuraText.setAttribute("value", "Go to China wiki");
         currentTab = 'country1';
         if (currentTab === 'country1') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E8%8A%B1";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%A8%B1%E8%8A%B1";
         }
       });
-      hanaCountryButton2.addEventListener('click', function(evt) {
-        hanaText.setAttribute("value", "Go to Taiwan Wiki");
+      sakuraCountryButton2.addEventListener('click', function(evt) {
+        sakuraText.setAttribute("value", "Go to Taiwan Wiki");
         currentTab = 'country2';
         if (currentTab === 'country2') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E8%8A%B1";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%A8%B1%E8%8A%B1";
         }
       });
-      hanaCountryButton3.addEventListener('click', function(evt) {
-        hanaText.setAttribute("value", "Go to America Wiki");
+      sakuraCountryButton3.addEventListener('click', function(evt) {
+        sakuraText.setAttribute("value", "Go to America Wiki");
         currentTab = 'country3';
         if (currentTab === 'country3') {
-          window.location.href = "https://en.wikipedia.org/wiki/Flower";
+          window.location.href = "https://en.wikipedia.org/wiki/Cherry_blossom";
         }
       });
     }
 
-    const hanaShowImage = (done) => {
-      const hanaImagePanel = document.querySelector("#hana-image-panel");
-      const hanaImageLeftButton = document.querySelector("#hana-image-left-button");
-      const hanaImageRightButton = document.querySelector("#hana-image-right-button");
-      const hanaStartImageItem = document.querySelector("#hana-start-image-item");
+    const sakuraShowImage = (done) => {
+      const sakuraImagePanel = document.querySelector("#sakura-image-panel");
+      const sakuraImageLeftButton = document.querySelector("#sakura-image-left-button");
+      const sakuraImageRightButton = document.querySelector("#sakura-image-right-button");
+      const sakuraStartImageItem = document.querySelector("#sakura-start-image-item");
 
       let y = 0;
       let scale = 0.001; //
@@ -74,7 +74,7 @@
 
       const showImageItem = (item) => {
         for (let i = 0; i <= 3; i++) {
-          document.querySelector("#hana-image-item" + i).setAttribute(
+          document.querySelector("#sakura-image-item" + i).setAttribute(
             "visible", i === item);
         }
       }
@@ -83,18 +83,18 @@
         scale += (1 - 0.001) / (0.3 / 0.01); //
         if (y >= 0.3) {
           clearInterval(id);
-          hanaImageLeftButton.setAttribute("visible", true);
-          hanaImageRightButton.setAttribute("visible", true);
-          hanaImageLeftButton.addEventListener('click', () => {
+          sakuraImageLeftButton.setAttribute("visible", true);
+          sakuraImageRightButton.setAttribute("visible", true);
+          sakuraImageLeftButton.addEventListener('click', () => {
             currentItem = (currentItem - 1 + 4) % 4;
             showImageItem(currentItem);
           });
-          hanaImageRightButton.addEventListener('click', () => {
+          sakuraImageRightButton.addEventListener('click', () => {
             currentItem = (currentItem + 1) % 4;
             showImageItem(currentItem);
           });
 
-          hanaStartImageItem.addEventListener('click', () => {
+          sakuraStartImageItem.addEventListener('click', () => {
             startImageItem.setAttribute("visible", true);
           });
 
@@ -103,14 +103,14 @@
           }, 500);
         }
 
-        hanaImagePanel.setAttribute("visible", true);
-        hanaImagePanel.setAttribute("position", "0 " + y + " -0.01");
-        hanaImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
+        sakuraImagePanel.setAttribute("visible", true);
+        sakuraImagePanel.setAttribute("position", "0 " + y + " -0.01");
+        sakuraImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
       }, 10);
     }
 
-    const hanaShowAvatar = (onDone) => {
-      const hanaAvatar = document.querySelector("#hana-avatar");
+    const sakuraShowAvatar = (onDone) => {
+      const sakuraAvatar = document.querySelector("#sakura-avatar");
       let z = 0;
       let scale = 0.07;
 
@@ -123,8 +123,8 @@
           onDone();
         }
 
-        hanaAvatar.setAttribute("position", `0 -0.085 ${z}`);
-        hanaAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
+        sakuraAvatar.setAttribute("position", `0 -0.085 ${z}`);
+        sakuraAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
       }, 10);
     }
 
@@ -138,11 +138,11 @@
 
       const startAR = () => {
         modal.style.display = "none";
-        hanaShowAvatar(() => {
+        sakuraShowAvatar(() => {
           setTimeout(() => {
-            hanaShowImage(() => {
+            sakuraShowImage(() => {
               setTimeout(() => {
-                hanaShowInfo();
+                sakuraShowInfo();
               }, 100);
             });
           }, 100);
@@ -151,7 +151,7 @@
 
       okButton.addEventListener('click', startAR);
 
-      AFRAME.registerComponent('hanatarget', {
+      AFRAME.registerComponent('sakuratarget', {
         init: function() {
           this.el.addEventListener('targetFound', event => {
             console.log("target found");
@@ -166,64 +166,64 @@
   </script>
 
   <script>
-    const toriShowInfo = () => {
+    const baiShowInfo = () => {
       let y = 0;
-      const toriCountryButton0 = document.querySelector("#tori-country-button0");
-      const toriCountryButton1 = document.querySelector("#tori-country-button1");
-      const toriCountryButton2 = document.querySelector("#tori-country-button2");
-      const toriCountryButton3 = document.querySelector("#tori-country-button3");
-      const toriText = document.querySelector("#tori-text");
+      const baiCountryButton0 = document.querySelector("#bai-country-button0");
+      const baiCountryButton1 = document.querySelector("#bai-country-button1");
+      const baiCountryButton2 = document.querySelector("#bai-country-button2");
+      const baiCountryButton3 = document.querySelector("#bai-country-button3");
+      const baiText = document.querySelector("#bai-text");
 
-      toriCountryButton0.setAttribute("visible", true);
+      baiCountryButton0.setAttribute("visible", true);
       setTimeout(() => {
-        toriCountryButton1.setAttribute("visible", true);
+        baiCountryButton1.setAttribute("visible", true);
       }, 300);
       setTimeout(() => {
-        toriCountryButton2.setAttribute("visible", true);
+        baiCountryButton2.setAttribute("visible", true);
       }, 600);
       setTimeout(() => {
-        toriCountryButton3.setAttribute("visible", true);
+        baiCountryButton3.setAttribute("visible", true);
       }, 900);
       setTimeout(() => {
-        toriText.setAttribute("visible", true);
+        baiText.setAttribute("visible", true);
       }, 1200);
 
       let currentTab = '';
-      toriCountryButton0.addEventListener('click', function(evt) {
-        toriText.setAttribute("value", "Go to Japan Wiki");
+      baiCountryButton0.addEventListener('click', function(evt) {
+        baiText.setAttribute("value", "Go to Japan Wiki");
         currentTab = 'country0';
         if (currentTab === 'country0') {
-          window.location.href = "https://ja.wikipedia.org/wiki/%E9%B3%A5%E9%A1%9E";
+          window.location.href = "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%A1";
         }
       });
-      toriCountryButton1.addEventListener('click', function(evt) {
-        toriText.setAttribute("value", "Go to China wiki");
+      baiCountryButton1.addEventListener('click', function(evt) {
+        baiText.setAttribute("value", "Go to China wiki");
         currentTab = 'country1';
         if (currentTab === 'country1') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E9%B8%9F";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%A2%85";
         }
       });
-      toriCountryButton2.addEventListener('click', function(evt) {
-        toriText.setAttribute("value", "Go to Taiwan Wiki");
+      baiCountryButton2.addEventListener('click', function(evt) {
+        baiText.setAttribute("value", "Go to Taiwan Wiki");
         currentTab = 'country2';
         if (currentTab === 'country2') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E9%B8%9F";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%A2%85";
         }
       });
-      toriCountryButton3.addEventListener('click', function(evt) {
-        toriText.setAttribute("value", "Go to America Wiki");
+      baiCountryButton3.addEventListener('click', function(evt) {
+        baiText.setAttribute("value", "Go to America Wiki");
         currentTab = 'country3';
         if (currentTab === 'country3') {
-          window.location.href = "https://en.wikipedia.org/wiki/Bird";
+          window.location.href = "https://en.wikipedia.org/wiki/Prunus_mume";
         }
       });
     }
 
-    const toriShowImage = (done) => {
-      const toriImagePanel = document.querySelector("#tori-image-panel");
-      const toriImageLeftButton = document.querySelector("#tori-image-left-button");
-      const toriImageRightButton = document.querySelector("#tori-image-right-button");
-      const toriStartImageItem = document.querySelector("#tori-start-image-item");
+    const baiShowImage = (done) => {
+      const baiImagePanel = document.querySelector("#bai-image-panel");
+      const baiImageLeftButton = document.querySelector("#bai-image-left-button");
+      const baiImageRightButton = document.querySelector("#bai-image-right-button");
+      const baiStartImageItem = document.querySelector("#bai-start-image-item");
 
       let y = 0;
       let scale = 0.001; //
@@ -231,7 +231,7 @@
 
       const showImageItem = (item) => {
         for (let i = 0; i <= 3; i++) {
-          document.querySelector("#tori-image-item" + i).setAttribute(
+          document.querySelector("#bai-image-item" + i).setAttribute(
             "visible", i === item);
         }
       }
@@ -240,18 +240,18 @@
         scale += (1 - 0.001) / (0.3 / 0.01); //
         if (y >= 0.3) {
           clearInterval(id);
-          toriImageLeftButton.setAttribute("visible", true);
-          toriImageRightButton.setAttribute("visible", true);
-          toriImageLeftButton.addEventListener('click', () => {
+          baiImageLeftButton.setAttribute("visible", true);
+          baiImageRightButton.setAttribute("visible", true);
+          baiImageLeftButton.addEventListener('click', () => {
             currentItem = (currentItem - 1 + 4) % 4;
             showImageItem(currentItem);
           });
-          toriImageRightButton.addEventListener('click', () => {
+          baiImageRightButton.addEventListener('click', () => {
             currentItem = (currentItem + 1) % 4;
             showImageItem(currentItem);
           });
 
-          toriStartImageItem.addEventListener('click', () => {
+          baiStartImageItem.addEventListener('click', () => {
             startImageItem.setAttribute("visible", true);
           });
 
@@ -260,14 +260,14 @@
           }, 500);
         }
 
-        toriImagePanel.setAttribute("visible", true);
-        toriImagePanel.setAttribute("position", "0 " + y + " -0.01");
-        toriImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
+        baiImagePanel.setAttribute("visible", true);
+        baiImagePanel.setAttribute("position", "0 " + y + " -0.01");
+        baiImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
       }, 10);
     }
 
-    const toriShowAvatar = (onDone) => {
-      const toriAvatar = document.querySelector("#tori-avatar");
+    const baiShowAvatar = (onDone) => {
+      const baiAvatar = document.querySelector("#bai-avatar");
       let z = 0;
       let scale = 0.07;
 
@@ -280,8 +280,8 @@
           onDone();
         }
 
-        toriAvatar.setAttribute("position", `0 -0.085 ${z}`);
-        toriAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
+        baiAvatar.setAttribute("position", `0 -0.085 ${z}`);
+        baiAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
       }, 10);
     }
 
@@ -295,11 +295,11 @@
 
       const startAR = () => {
         modal.style.display = "none";
-        toriShowAvatar(() => {
+        baiShowAvatar(() => {
           setTimeout(() => {
-            toriShowImage(() => {
+            baiShowImage(() => {
               setTimeout(() => {
-                toriShowInfo();
+                baiShowInfo();
               }, 100);
             });
           }, 100);
@@ -308,7 +308,7 @@
 
       okButton.addEventListener('click', startAR);
 
-      AFRAME.registerComponent('toritarget', {
+      AFRAME.registerComponent('baitarget', {
         init: function() {
           this.el.addEventListener('targetFound', event => {
             console.log("target found");
@@ -323,64 +323,64 @@
   </script>
 
   <script>
-    const kazeShowInfo = () => {
+    const momoShowInfo = () => {
       let y = 0;
-      const kazeCountryButton0 = document.querySelector("#kaze-country-button0");
-      const kazeCountryButton1 = document.querySelector("#kaze-country-button1");
-      const kazeCountryButton2 = document.querySelector("#kaze-country-button2");
-      const kazeCountryButton3 = document.querySelector("#kaze-country-button3");
-      const kazeText = document.querySelector("#kaze-text");
+      const momoCountryButton0 = document.querySelector("#momo-country-button0");
+      const momoCountryButton1 = document.querySelector("#momo-country-button1");
+      const momoCountryButton2 = document.querySelector("#momo-country-button2");
+      const momoCountryButton3 = document.querySelector("#momo-country-button3");
+      const momoText = document.querySelector("#momo-text");
 
-      kazeCountryButton0.setAttribute("visible", true);
+      momoCountryButton0.setAttribute("visible", true);
       setTimeout(() => {
-        kazeCountryButton1.setAttribute("visible", true);
+        momoCountryButton1.setAttribute("visible", true);
       }, 300);
       setTimeout(() => {
-        kazeCountryButton2.setAttribute("visible", true);
+        momoCountryButton2.setAttribute("visible", true);
       }, 600);
       setTimeout(() => {
-        kazeCountryButton3.setAttribute("visible", true);
+        momoCountryButton3.setAttribute("visible", true);
       }, 900);
       setTimeout(() => {
-        kazeText.setAttribute("visible", true);
+        momoText.setAttribute("visible", true);
       }, 1200);
 
       let currentTab = '';
-      kazeCountryButton0.addEventListener('click', function(evt) {
-        kazeText.setAttribute("value", "Go to Japan Wiki");
+      momoCountryButton0.addEventListener('click', function(evt) {
+        momoText.setAttribute("value", "Go to Japan Wiki");
         currentTab = 'country0';
         if (currentTab === 'country0') {
-          window.location.href = "https://ja.wikipedia.org/wiki/%E9%A2%A8";
+          window.location.href = "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%A2";
         }
       });
-      kazeCountryButton1.addEventListener('click', function(evt) {
-        kazeText.setAttribute("value", "Go to China wiki");
+      momoCountryButton1.addEventListener('click', function(evt) {
+        momoText.setAttribute("value", "Go to China wiki");
         currentTab = 'country1';
         if (currentTab === 'country1') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E9%A2%A8";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%A1%83";
         }
       });
-      kazeCountryButton2.addEventListener('click', function(evt) {
-        kazeText.setAttribute("value", "Go to Taiwan Wiki");
+      momoCountryButton2.addEventListener('click', function(evt) {
+        momoText.setAttribute("value", "Go to Taiwan Wiki");
         currentTab = 'country2';
         if (currentTab === 'country2') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E9%A2%A8";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%A1%83";
         }
       });
-      kazeCountryButton3.addEventListener('click', function(evt) {
-        kazeText.setAttribute("value", "Go to America Wiki");
+      momoCountryButton3.addEventListener('click', function(evt) {
+        momoText.setAttribute("value", "Go to America Wiki");
         currentTab = 'country3';
         if (currentTab === 'country3') {
-          window.location.href = "https://en.wikipedia.org/wiki/Wind";
+          window.location.href = "https://en.wikipedia.org/wiki/Peach";
         }
       });
     }
 
-    const kazeShowImage = (done) => {
-      const kazeImagePanel = document.querySelector("#kaze-image-panel");
-      const kazeImageLeftButton = document.querySelector("#kaze-image-left-button");
-      const kazeImageRightButton = document.querySelector("#kaze-image-right-button");
-      const kazeStartImageItem = document.querySelector("#kaze-start-image-item");
+    const momoShowImage = (done) => {
+      const momoImagePanel = document.querySelector("#momo-image-panel");
+      const momoImageLeftButton = document.querySelector("#momo-image-left-button");
+      const momoImageRightButton = document.querySelector("#momo-image-right-button");
+      const momoStartImageItem = document.querySelector("#momo-start-image-item");
 
       let y = 0;
       let scale = 0.001; //
@@ -388,7 +388,7 @@
 
       const showImageItem = (item) => {
         for (let i = 0; i <= 3; i++) {
-          document.querySelector("#kaze-image-item" + i).setAttribute(
+          document.querySelector("#momo-image-item" + i).setAttribute(
             "visible", i === item);
         }
       }
@@ -397,18 +397,18 @@
         scale += (1 - 0.001) / (0.3 / 0.01); //
         if (y >= 0.3) {
           clearInterval(id);
-          kazeImageLeftButton.setAttribute("visible", true);
-          kazeImageRightButton.setAttribute("visible", true);
-          kazeImageLeftButton.addEventListener('click', () => {
+          momoImageLeftButton.setAttribute("visible", true);
+          momoImageRightButton.setAttribute("visible", true);
+          momoImageLeftButton.addEventListener('click', () => {
             currentItem = (currentItem - 1 + 4) % 4;
             showImageItem(currentItem);
           });
-          kazeImageRightButton.addEventListener('click', () => {
+          momoImageRightButton.addEventListener('click', () => {
             currentItem = (currentItem + 1) % 4;
             showImageItem(currentItem);
           });
 
-          kazeStartImageItem.addEventListener('click', () => {
+          momoStartImageItem.addEventListener('click', () => {
             startImageItem.setAttribute("visible", true);
           });
 
@@ -417,14 +417,14 @@
           }, 500);
         }
 
-        kazeImagePanel.setAttribute("visible", true);
-        kazeImagePanel.setAttribute("position", "0 " + y + " -0.01");
-        kazeImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
+        momoImagePanel.setAttribute("visible", true);
+        momoImagePanel.setAttribute("position", "0 " + y + " -0.01");
+        momoImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
       }, 10);
     }
 
-    const kazeShowAvatar = (onDone) => {
-      const kazeAvatar = document.querySelector("#kaze-avatar");
+    const momoShowAvatar = (onDone) => {
+      const momoAvatar = document.querySelector("#momo-avatar");
       let z = 0;
       let scale = 0.07;
 
@@ -437,8 +437,8 @@
           onDone();
         }
 
-        kazeAvatar.setAttribute("position", `0 -0.085 ${z}`);
-        kazeAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
+        momoAvatar.setAttribute("position", `0 -0.085 ${z}`);
+        momoAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
       }, 10);
     }
 
@@ -452,11 +452,11 @@
 
       const startAR = () => {
         modal.style.display = "none";
-        kazeShowAvatar(() => {
+        momoShowAvatar(() => {
           setTimeout(() => {
-            kazeShowImage(() => {
+            momoShowImage(() => {
               setTimeout(() => {
-                kazeShowInfo();
+                momoShowInfo();
               }, 100);
             });
           }, 100);
@@ -465,7 +465,7 @@
 
       okButton.addEventListener('click', startAR);
 
-      AFRAME.registerComponent('kazetarget', {
+      AFRAME.registerComponent('momotarget', {
         init: function() {
           this.el.addEventListener('targetFound', event => {
             console.log("target found");
@@ -480,64 +480,64 @@
   </script>
 
   <script>
-    const tukiShowInfo = () => {
+    const sumomoShowInfo = () => {
       let y = 0;
-      const tukiCountryButton0 = document.querySelector("#tuki-country-button0");
-      const tukiCountryButton1 = document.querySelector("#tuki-country-button1");
-      const tukiCountryButton2 = document.querySelector("#tuki-country-button2");
-      const tukiCountryButton3 = document.querySelector("#tuki-country-button3");
-      const tukiText = document.querySelector("#tuki-text");
+      const sumomoCountryButton0 = document.querySelector("#sumomo-country-button0");
+      const sumomoCountryButton1 = document.querySelector("#sumomo-country-button1");
+      const sumomoCountryButton2 = document.querySelector("#sumomo-country-button2");
+      const sumomoCountryButton3 = document.querySelector("#sumomo-country-button3");
+      const sumomoText = document.querySelector("#sumomo-text");
 
-      tukiCountryButton0.setAttribute("visible", true);
+      sumomoCountryButton0.setAttribute("visible", true);
       setTimeout(() => {
-        tukiCountryButton1.setAttribute("visible", true);
+        sumomoCountryButton1.setAttribute("visible", true);
       }, 300);
       setTimeout(() => {
-        tukiCountryButton2.setAttribute("visible", true);
+        sumomoCountryButton2.setAttribute("visible", true);
       }, 600);
       setTimeout(() => {
-        tukiCountryButton3.setAttribute("visible", true);
+        sumomoCountryButton3.setAttribute("visible", true);
       }, 900);
       setTimeout(() => {
-        tukiText.setAttribute("visible", true);
+        sumomoText.setAttribute("visible", true);
       }, 1200);
 
       let currentTab = '';
-      tukiCountryButton0.addEventListener('click', function(evt) {
-        tukiText.setAttribute("value", "Go to Japan Wiki");
+      sumomoCountryButton0.addEventListener('click', function(evt) {
+        sumomoText.setAttribute("value", "Go to Japan Wiki");
         currentTab = 'country0';
         if (currentTab === 'country0') {
-          window.location.href = "https://ja.wikipedia.org/wiki/%E6%9C%88";
+          window.location.href = "https://ja.wikipedia.org/wiki/%E6%9D%8E";
         }
       });
-      tukiCountryButton1.addEventListener('click', function(evt) {
-        tukiText.setAttribute("value", "Go to China wiki");
+      sumomoCountryButton1.addEventListener('click', function(evt) {
+        sumomoText.setAttribute("value", "Go to China wiki");
         currentTab = 'country1';
         if (currentTab === 'country1') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E6%9C%88%E7%90%83";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%9D%8E";
         }
       });
-      tukiCountryButton2.addEventListener('click', function(evt) {
-        tukiText.setAttribute("value", "Go to Taiwan Wiki");
+      sumomoCountryButton2.addEventListener('click', function(evt) {
+        sumomoText.setAttribute("value", "Go to Taiwan Wiki");
         currentTab = 'country2';
         if (currentTab === 'country2') {
-          window.location.href = "https://zh.wikipedia.org/wiki/%E6%9C%88%E7%90%83";
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%9D%8E";
         }
       });
-      tukiCountryButton3.addEventListener('click', function(evt) {
-        tukiText.setAttribute("value", "Go to America Wiki");
+      sumomoCountryButton3.addEventListener('click', function(evt) {
+        sumomoText.setAttribute("value", "Go to America Wiki");
         currentTab = 'country3';
         if (currentTab === 'country3') {
-          window.location.href = "https://en.wikipedia.org/wiki/Moon";
+          window.location.href = "https://en.wikipedia.org/wiki/Prunus_salicina";
         }
       });
     }
 
-    const tukiShowImage = (done) => {
-      const tukiImagePanel = document.querySelector("#tuki-image-panel");
-      const tukiImageLeftButton = document.querySelector("#tuki-image-left-button");
-      const tukiImageRightButton = document.querySelector("#tuki-image-right-button");
-      const tukiStartImageItem = document.querySelector("#tuki-start-image-item");
+    const sumomoShowImage = (done) => {
+      const sumomoImagePanel = document.querySelector("#sumomo-image-panel");
+      const sumomoImageLeftButton = document.querySelector("#sumomo-image-left-button");
+      const sumomoImageRightButton = document.querySelector("#sumomo-image-right-button");
+      const sumomoStartImageItem = document.querySelector("#sumomo-start-image-item");
 
       let y = 0;
       let scale = 0.001; //
@@ -545,7 +545,7 @@
 
       const showImageItem = (item) => {
         for (let i = 0; i <= 3; i++) {
-          document.querySelector("#tuki-image-item" + i).setAttribute(
+          document.querySelector("#sumomo-image-item" + i).setAttribute(
             "visible", i === item);
         }
       }
@@ -554,18 +554,18 @@
         scale += (1 - 0.001) / (0.3 / 0.01); //
         if (y >= 0.3) {
           clearInterval(id);
-          tukiImageLeftButton.setAttribute("visible", true);
-          tukiImageRightButton.setAttribute("visible", true);
-          tukiImageLeftButton.addEventListener('click', () => {
+          sumomoImageLeftButton.setAttribute("visible", true);
+          sumomoImageRightButton.setAttribute("visible", true);
+          sumomoImageLeftButton.addEventListener('click', () => {
             currentItem = (currentItem - 1 + 4) % 4;
             showImageItem(currentItem);
           });
-          tukiImageRightButton.addEventListener('click', () => {
+          sumomoImageRightButton.addEventListener('click', () => {
             currentItem = (currentItem + 1) % 4;
             showImageItem(currentItem);
           });
 
-          tukiStartImageItem.addEventListener('click', () => {
+          sumomoStartImageItem.addEventListener('click', () => {
             startImageItem.setAttribute("visible", true);
           });
 
@@ -574,14 +574,14 @@
           }, 500);
         }
 
-        tukiImagePanel.setAttribute("visible", true);
-        tukiImagePanel.setAttribute("position", "0 " + y + " -0.01");
-        tukiImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
+        sumomoImagePanel.setAttribute("visible", true);
+        sumomoImagePanel.setAttribute("position", "0 " + y + " -0.01");
+        sumomoImagePanel.setAttribute("scale", `${scale} ${scale} ${scale}`); //
       }, 10);
     }
 
-    const tukiShowAvatar = (onDone) => {
-      const tukiAvatar = document.querySelector("#tuki-avatar");
+    const sumomoShowAvatar = (onDone) => {
+      const sumomoAvatar = document.querySelector("#sumomo-avatar");
       let z = 0;
       let scale = 0.07;
 
@@ -594,8 +594,8 @@
           onDone();
         }
 
-        tukiAvatar.setAttribute("position", `0 -0.085 ${z}`);
-        tukiAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
+        sumomoAvatar.setAttribute("position", `0 -0.085 ${z}`);
+        sumomoAvatar.setAttribute("scale", `${scale} ${scale} ${scale}`);
       }, 10);
     }
 
@@ -609,11 +609,11 @@
 
       const startAR = () => {
         modal.style.display = "none";
-        tukiShowAvatar(() => {
+        sumomoShowAvatar(() => {
           setTimeout(() => {
-            tukiShowImage(() => {
+            sumomoShowImage(() => {
               setTimeout(() => {
-                tukiShowInfo();
+                sumomoShowInfo();
               }, 100);
             });
           }, 100);
@@ -622,7 +622,7 @@
 
       okButton.addEventListener('click', startAR);
 
-      AFRAME.registerComponent('tukitarget', {
+      AFRAME.registerComponent('sumomotarget', {
         init: function() {
           this.el.addEventListener('targetFound', event => {
             console.log("target found");
@@ -838,7 +838,7 @@
 </head>
 
 <body>
-  <div style="color: #f00;">Ver1.3.0</div>
+  <div style="color: #f00;">Ver1.3.1</div>
 
   <div class="example-container">
     <div id="example-scanning-overlay" class="">
@@ -861,229 +861,229 @@
     embedded="" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
     inspector="" keyboard-shortcuts="" screenshot="">
       <a-assets>
-        <img id="hana-icon-country0" src="./assets/images/icon-jpn.png">
-        <img id="hana-icon-country1" src="./assets/images/icon-chn.png">
-        <img id="hana-icon-country2" src="./assets/images/icon-twn.png">
-        <img id="hana-icon-country3" src="./assets/images/icon-usa.png">
-        <img id="hana-icon-left" src="./assets/images/left.png">
-        <img id="hana-icon-right" src="./assets/images/right.png">
-        <img id="hana-start-image" src="./assets/images/hana-lang-jpn.jpg">
-        <img id="hana-language1-image" src="./assets/images/hana-lang-chn.jpg">
-        <img id="hana-language2-image" src="./assets/images/hana-lang-twn.jpg">
-        <img id="hana-language3-image" src="./assets/images/hana-lang-usa.jpg">
-        <a-asset-item id="hana-avatarModel" src="./assets/model/model_hana.glb"></a-asset-item>
+        <img id="sakura-icon-country0" src="./assets/images/icon-jpn.png">
+        <img id="sakura-icon-country1" src="./assets/images/icon-chn.png">
+        <img id="sakura-icon-country2" src="./assets/images/icon-twn.png">
+        <img id="sakura-icon-country3" src="./assets/images/icon-usa.png">
+        <img id="sakura-icon-left" src="./assets/images/left.png">
+        <img id="sakura-icon-right" src="./assets/images/right.png">
+        <img id="sakura-start-image" src="./assets/images/sakura-lang-jpn.jpg">
+        <img id="sakura-language1-image" src="./assets/images/sakura-lang-chn.jpg">
+        <img id="sakura-language2-image" src="./assets/images/sakura-lang-twn.jpg">
+        <img id="sakura-language3-image" src="./assets/images/sakura-lang-usa.jpg">
+        <a-asset-item id="sakura-avatarModel" src="./assets/model/model_sakura.glb"></a-asset-item>
 
-        <img id="tori-icon-country0" src="./assets/images/icon-jpn.png">
-        <img id="tori-icon-country1" src="./assets/images/icon-chn.png">
-        <img id="tori-icon-country2" src="./assets/images/icon-twn.png">
-        <img id="tori-icon-country3" src="./assets/images/icon-usa.png">
-        <img id="tori-icon-left" src="./assets/images/left.png">
-        <img id="tori-icon-right" src="./assets/images/right.png">
-        <img id="tori-start-image" src="./assets/images/tori-lang-jpn.jpg">
-        <img id="tori-language1-image" src="./assets/images/tori-lang-chn.jpg">
-        <img id="tori-language2-image" src="./assets/images/tori-lang-twn.jpg">
-        <img id="tori-language3-image" src="./assets/images/tori-lang-usa.jpg">
-        <a-asset-item id="tori-avatarModel" src="./assets/model/model_tori.glb"></a-asset-item>
+        <img id="bai-icon-country0" src="./assets/images/icon-jpn.png">
+        <img id="bai-icon-country1" src="./assets/images/icon-chn.png">
+        <img id="bai-icon-country2" src="./assets/images/icon-twn.png">
+        <img id="bai-icon-country3" src="./assets/images/icon-usa.png">
+        <img id="bai-icon-left" src="./assets/images/left.png">
+        <img id="bai-icon-right" src="./assets/images/right.png">
+        <img id="bai-start-image" src="./assets/images/bai-lang-jpn.jpg">
+        <img id="bai-language1-image" src="./assets/images/bai-lang-chn.jpg">
+        <img id="bai-language2-image" src="./assets/images/bai-lang-twn.jpg">
+        <img id="bai-language3-image" src="./assets/images/bai-lang-usa.jpg">
+        <a-asset-item id="bai-avatarModel" src="./assets/model/model_bai.glb"></a-asset-item>
 
-        <img id="kaze-icon-country0" src="./assets/images/icon-jpn.png">
-        <img id="kaze-icon-country1" src="./assets/images/icon-chn.png">
-        <img id="kaze-icon-country2" src="./assets/images/icon-twn.png">
-        <img id="kaze-icon-country3" src="./assets/images/icon-usa.png">
-        <img id="kaze-icon-left" src="./assets/images/left.png">
-        <img id="kaze-icon-right" src="./assets/images/right.png">
-        <img id="kaze-start-image" src="./assets/images/kaze-lang-jpn.jpg">
-        <img id="kaze-language1-image" src="./assets/images/kaze-lang-chn.jpg">
-        <img id="kaze-language2-image" src="./assets/images/kaze-lang-twn.jpg">
-        <img id="kaze-language3-image" src="./assets/images/kaze-lang-usa.jpg">
-        <a-asset-item id="kaze-avatarModel" src="./assets/model/model_kaze.glb"></a-asset-item>
+        <img id="momo-icon-country0" src="./assets/images/icon-jpn.png">
+        <img id="momo-icon-country1" src="./assets/images/icon-chn.png">
+        <img id="momo-icon-country2" src="./assets/images/icon-twn.png">
+        <img id="momo-icon-country3" src="./assets/images/icon-usa.png">
+        <img id="momo-icon-left" src="./assets/images/left.png">
+        <img id="momo-icon-right" src="./assets/images/right.png">
+        <img id="momo-start-image" src="./assets/images/momo-lang-jpn.jpg">
+        <img id="momo-language1-image" src="./assets/images/momo-lang-chn.jpg">
+        <img id="momo-language2-image" src="./assets/images/momo-lang-twn.jpg">
+        <img id="momo-language3-image" src="./assets/images/momo-lang-usa.jpg">
+        <a-asset-item id="momo-avatarModel" src="./assets/model/model_momo.glb"></a-asset-item>
 
-        <img id="tuki-icon-country0" src="./assets/images/icon-jpn.png">
-        <img id="tuki-icon-country1" src="./assets/images/icon-chn.png">
-        <img id="tuki-icon-country2" src="./assets/images/icon-twn.png">
-        <img id="tuki-icon-country3" src="./assets/images/icon-usa.png">
-        <img id="tuki-icon-left" src="./assets/images/left.png">
-        <img id="tuki-icon-right" src="./assets/images/right.png">
-        <img id="tuki-start-image" src="./assets/images/tuki-lang-jpn.jpg">
-        <img id="tuki-language1-image" src="./assets/images/tuki-lang-chn.jpg">
-        <img id="tuki-language2-image" src="./assets/images/tuki-lang-twn.jpg">
-        <img id="tuki-language3-image" src="./assets/images/tuki-lang-usa.jpg">
-        <a-asset-item id="tuki-avatarModel" src="./assets/model/model_tuki.glb"></a-asset-item>
+        <img id="sumomo-icon-country0" src="./assets/images/icon-jpn.png">
+        <img id="sumomo-icon-country1" src="./assets/images/icon-chn.png">
+        <img id="sumomo-icon-country2" src="./assets/images/icon-twn.png">
+        <img id="sumomo-icon-country3" src="./assets/images/icon-usa.png">
+        <img id="sumomo-icon-left" src="./assets/images/left.png">
+        <img id="sumomo-icon-right" src="./assets/images/right.png">
+        <img id="sumomo-start-image" src="./assets/images/sumomo-lang-jpn.jpg">
+        <img id="sumomo-language1-image" src="./assets/images/sumomo-lang-chn.jpg">
+        <img id="sumomo-language2-image" src="./assets/images/sumomo-lang-twn.jpg">
+        <img id="sumomo-language3-image" src="./assets/images/sumomo-lang-usa.jpg">
+        <a-asset-item id="sumomo-avatarModel" src="./assets/model/model_sumomo.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;"
       raycaster="far: 10000; objects: .clickable" camera="" rotation="" wasd-controls="">
       </a-camera>
 
-      <a-entity hanatarget id="" mindar-image-target="targetIndex: 0">
-        <a-entity visible="false" id="hana-image-panel" position="0 0 -0.01">
+      <a-entity sakuratarget id="" mindar-image-target="targetIndex: 0">
+        <a-entity visible="false" id="sakura-image-panel" position="0 0 -0.01">
           <!-- <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0" text=""></a-text> -->
-          <a-entity id="hana-image-item0">
-            <a-image id="hana-start-image-item" class="clickable" src="#hana-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sakura-image-item0">
+            <a-image id="sakura-start-image-item" class="clickable" src="#sakura-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="hana-image-item1" visible="false">
-            <a-image class="clickable" src="#hana-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sakura-image-item1" visible="false">
+            <a-image class="clickable" src="#sakura-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="hana-image-item2" visible="false">
-            <a-image class="clickable" src="#hana-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sakura-image-item2" visible="false">
+            <a-image class="clickable" src="#sakura-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="hana-image-item3" visible="false">
-            <a-image class="clickable" src="#hana-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sakura-image-item3" visible="false">
+            <a-image class="clickable" src="#sakura-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-image visible="false" id="hana-image-left-button" class="clickable" src="#hana-icon-left" position="-0.65 0.3 0"
+          <a-image visible="false" id="sakura-image-left-button" class="clickable" src="#sakura-icon-left" position="-0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
-          <a-image visible="false" id="hana-image-right-button" class="clickable" src="#hana-icon-right" position="0.65 0.3 0"
+          <a-image visible="false" id="sakura-image-right-button" class="clickable" src="#sakura-icon-right" position="0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
         </a-entity>
 
-        <a-image visible="false" id="hana-country-button0" class="clickable" src="#hana-icon-country0" position="-0.42 1 0"
+        <a-image visible="false" id="sakura-country-button0" class="clickable" src="#sakura-icon-country0" position="-0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="hana-country-button1" class="clickable" src="#hana-icon-country1" position="-0.14 1 0"
+        <a-image visible="false" id="sakura-country-button1" class="clickable" src="#sakura-icon-country1" position="-0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="hana-country-button2" class="clickable" src="#hana-icon-country2" position="0.14 1 0"
+        <a-image visible="false" id="sakura-country-button2" class="clickable" src="#sakura-icon-country2" position="0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="hana-country-button3" class="clickable" src="#hana-icon-country3" position="0.42 1 0"
+        <a-image visible="false" id="sakura-country-button3" class="clickable" src="#sakura-icon-country3" position="0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-gltf-model id="hana-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#hana-avatarModel" gltf-model=""
+        <a-gltf-model id="sakura-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#sakura-avatarModel" gltf-model=""
         animation="property: rotation; from: 0 -20 0; to: 0 20 0; dur: 2500; easing: easeInOutSine; loop: true; dir: alternate"></a-gltf-model>
 
-        <a-text visible="false" id="hana-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
+        <a-text visible="false" id="sakura-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
         position="0 -0.375 0" geometry="primitive:plane; height: 0.1; width: 1;" material="opacity: 0.5" text=""></a-text>
       </a-entity>
 
-      <a-entity toritarget id="" mindar-image-target="targetIndex: 1">
-        <a-entity visible="false" id="tori-image-panel" position="0 0 -0.01">
-          <a-entity id="tori-image-item0">
-            <a-image id="tori-start-image-item" class="clickable" src="#tori-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+      <a-entity baitarget id="" mindar-image-target="targetIndex: 1">
+        <a-entity visible="false" id="bai-image-panel" position="0 0 -0.01">
+          <a-entity id="bai-image-item0">
+            <a-image id="bai-start-image-item" class="clickable" src="#bai-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="tori-image-item1" visible="false">
-            <a-image class="clickable" src="#tori-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="bai-image-item1" visible="false">
+            <a-image class="clickable" src="#bai-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="tori-image-item2" visible="false">
-            <a-image class="clickable" src="#tori-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="bai-image-item2" visible="false">
+            <a-image class="clickable" src="#bai-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="tori-image-item3" visible="false">
-            <a-image class="clickable" src="#tori-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="bai-image-item3" visible="false">
+            <a-image class="clickable" src="#bai-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-image visible="false" id="tori-image-left-button" class="clickable" src="#tori-icon-left" position="-0.65 0.3 0"
+          <a-image visible="false" id="bai-image-left-button" class="clickable" src="#bai-icon-left" position="-0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
-          <a-image visible="false" id="tori-image-right-button" class="clickable" src="#tori-icon-right" position="0.65 0.3 0"
+          <a-image visible="false" id="bai-image-right-button" class="clickable" src="#bai-icon-right" position="0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
         </a-entity>
 
-        <a-image visible="false" id="tori-country-button0" class="clickable" src="#tori-icon-country0" position="-0.42 1 0"
+        <a-image visible="false" id="bai-country-button0" class="clickable" src="#bai-icon-country0" position="-0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="tori-country-button1" class="clickable" src="#tori-icon-country1" position="-0.14 1 0"
+        <a-image visible="false" id="bai-country-button1" class="clickable" src="#bai-icon-country1" position="-0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="tori-country-button2" class="clickable" src="#tori-icon-country2" position="0.14 1 0"
+        <a-image visible="false" id="bai-country-button2" class="clickable" src="#bai-icon-country2" position="0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="tori-country-button3" class="clickable" src="#tori-icon-country3" position="0.42 1 0"
+        <a-image visible="false" id="bai-country-button3" class="clickable" src="#bai-icon-country3" position="0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-gltf-model id="tori-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#tori-avatarModel" gltf-model=""
+        <a-gltf-model id="bai-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#bai-avatarModel" gltf-model=""
         animation="property: rotation; from: 0 -20 0; to: 0 20 0; dur: 2500; easing: easeInOutSine; loop: true; dir: alternate"></a-gltf-model>
 
-        <a-text visible="false" id="tori-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
+        <a-text visible="false" id="bai-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
         position="0 -0.375 0" geometry="primitive:plane; height: 0.1; width: 1;" material="opacity: 0.5" text=""></a-text>
       </a-entity>
 
-      <a-entity kazetarget id="" mindar-image-target="targetIndex: 2">
-        <a-entity visible="false" id="kaze-image-panel" position="0 0 -0.01">
-          <a-entity id="kaze-image-item0">
-            <a-image id="kaze-start-image-item" class="clickable" src="#kaze-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+      <a-entity momotarget id="" mindar-image-target="targetIndex: 2">
+        <a-entity visible="false" id="momo-image-panel" position="0 0 -0.01">
+          <a-entity id="momo-image-item0">
+            <a-image id="momo-start-image-item" class="clickable" src="#momo-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="kaze-image-item1" visible="false">
-            <a-image class="clickable" src="#kaze-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="momo-image-item1" visible="false">
+            <a-image class="clickable" src="#momo-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="kaze-image-item2" visible="false">
-            <a-image class="clickable" src="#kaze-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="momo-image-item2" visible="false">
+            <a-image class="clickable" src="#momo-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="kaze-image-item3" visible="false">
-            <a-image class="clickable" src="#kaze-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="momo-image-item3" visible="false">
+            <a-image class="clickable" src="#momo-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-image visible="false" id="kaze-image-left-button" class="clickable" src="#kaze-icon-left" position="-0.65 0.3 0"
+          <a-image visible="false" id="momo-image-left-button" class="clickable" src="#momo-icon-left" position="-0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
-          <a-image visible="false" id="kaze-image-right-button" class="clickable" src="#kaze-icon-right" position="0.65 0.3 0"
+          <a-image visible="false" id="momo-image-right-button" class="clickable" src="#momo-icon-right" position="0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
         </a-entity>
 
-        <a-image visible="false" id="kaze-country-button0" class="clickable" src="#kaze-icon-country0" position="-0.42 1 0"
+        <a-image visible="false" id="momo-country-button0" class="clickable" src="#momo-icon-country0" position="-0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="kaze-country-button1" class="clickable" src="#kaze-icon-country1" position="-0.14 1 0"
+        <a-image visible="false" id="momo-country-button1" class="clickable" src="#momo-icon-country1" position="-0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="kaze-country-button2" class="clickable" src="#kaze-icon-country2" position="0.14 1 0"
+        <a-image visible="false" id="momo-country-button2" class="clickable" src="#momo-icon-country2" position="0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="kaze-country-button3" class="clickable" src="#kaze-icon-country3" position="0.42 1 0"
+        <a-image visible="false" id="momo-country-button3" class="clickable" src="#momo-icon-country3" position="0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-gltf-model id="kaze-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#kaze-avatarModel" gltf-model=""
+        <a-gltf-model id="momo-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#momo-avatarModel" gltf-model=""
         animation="property: rotation; from: 0 -20 0; to: 0 20 0; dur: 2500; easing: easeInOutSine; loop: true; dir: alternate"></a-gltf-model>
 
-        <a-text visible="false" id="kaze-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
+        <a-text visible="false" id="momo-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
         position="0 -0.375 0" geometry="primitive:plane; height: 0.1; width: 1;" material="opacity: 0.5" text=""></a-text>
       </a-entity>
 
-      <a-entity tukitarget id="" mindar-image-target="targetIndex: 3">
-        <a-entity visible="false" id="tuki-image-panel" position="0 0 -0.01">
-          <a-entity id="tuki-image-item0">
-            <a-image id="tuki-start-image-item" class="clickable" src="#tuki-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+      <a-entity sumomotarget id="" mindar-image-target="targetIndex: 3">
+        <a-entity visible="false" id="sumomo-image-panel" position="0 0 -0.01">
+          <a-entity id="sumomo-image-item0">
+            <a-image id="sumomo-start-image-item" class="clickable" src="#sumomo-start-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="tuki-image-item1" visible="false">
-            <a-image class="clickable" src="#tuki-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sumomo-image-item1" visible="false">
+            <a-image class="clickable" src="#sumomo-language1-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="tuki-image-item2" visible="false">
-            <a-image class="clickable" src="#tuki-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sumomo-image-item2" visible="false">
+            <a-image class="clickable" src="#sumomo-language2-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-entity id="tuki-image-item3" visible="false">
-            <a-image class="clickable" src="#tuki-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
+          <a-entity id="sumomo-image-item3" visible="false">
+            <a-image class="clickable" src="#sumomo-language3-image" alpha-test="0.5" position="0 0.3 0" height="0.552" width="1" material="" geometry=""></a-image>
           </a-entity>
-          <a-image visible="false" id="tuki-image-left-button" class="clickable" src="#tuki-icon-left" position="-0.65 0.3 0"
+          <a-image visible="false" id="sumomo-image-left-button" class="clickable" src="#sumomo-icon-left" position="-0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
-          <a-image visible="false" id="tuki-image-right-button" class="clickable" src="#tuki-icon-right" position="0.65 0.3 0"
+          <a-image visible="false" id="sumomo-image-right-button" class="clickable" src="#sumomo-icon-right" position="0.65 0.3 0"
           height="0.15" width="0.15" material="" geometry=""></a-image>
         </a-entity>
 
-        <a-image visible="false" id="tuki-country-button0" class="clickable" src="#tuki-icon-country0" position="-0.42 1 0"
+        <a-image visible="false" id="sumomo-country-button0" class="clickable" src="#sumomo-icon-country0" position="-0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="tuki-country-button1" class="clickable" src="#tuki-icon-country1" position="-0.14 1 0"
+        <a-image visible="false" id="sumomo-country-button1" class="clickable" src="#sumomo-icon-country1" position="-0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="tuki-country-button2" class="clickable" src="#tuki-icon-country2" position="0.14 1 0"
+        <a-image visible="false" id="sumomo-country-button2" class="clickable" src="#sumomo-icon-country2" position="0.14 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-image visible="false" id="tuki-country-button3" class="clickable" src="#tuki-icon-country3" position="0.42 1 0"
+        <a-image visible="false" id="sumomo-country-button3" class="clickable" src="#sumomo-icon-country3" position="0.42 1 0"
         height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         material="" geometry=""></a-image>
 
-        <a-gltf-model id="tuki-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#tuki-avatarModel" gltf-model=""
+        <a-gltf-model id="sumomo-avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#sumomo-avatarModel" gltf-model=""
         animation="property: rotation; from: 0 -20 0; to: 0 20 0; dur: 2500; easing: easeInOutSine; loop: true; dir: alternate"></a-gltf-model>
 
-        <a-text visible="false" id="tuki-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
+        <a-text visible="false" id="sumomo-text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
         position="0 -0.375 0" geometry="primitive:plane; height: 0.1; width: 1;" material="opacity: 0.5" text=""></a-text>
       </a-entity>
 
